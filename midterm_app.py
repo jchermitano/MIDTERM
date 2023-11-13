@@ -2,11 +2,19 @@ from flask import Flask
 from flask import request
 from flask import render_template
 
-sample = Flask(__name__)
+midterm = Flask(__name__)
 
-@sample.route("/")
+@midterm.route("/")
 def main():
     return render_template("login.html")
 
+@midterm.route("/registration.html")
+def registration():
+    return render_template("registration.html")
+ 
+@midterm.route("/login.html")
+def login():
+    return render_template("login.html")
+
 if __name__ == "__main__":
-    sample.run(host="0.0.0.0", port=5000)
+    midterm.run(host="0.0.0.0", port=5000)
